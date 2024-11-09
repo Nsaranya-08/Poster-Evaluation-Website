@@ -1,0 +1,414 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #050505;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.5s, color 0.5s;
+
+}
+
+
+body.dark-mode {
+    background-color: #000000 !important;
+    /* Ensure dark mode has black background */
+    /* Black background in dark mode */
+    color: #f6f5f5;
+}
+
+/* Ensure file input text stays black in dark mode */
+body.dark-mode #poster-upload {
+    color: #000 !important;
+}
+
+/* For additional file name display elements (if shown in a separate label or div) */
+body.dark-mode .file-name-display {
+    color: #000 !important;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #2e2867;
+    width: 100%;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    transition: background-color 0.5s;
+}
+
+/* Logo Styles */
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+header .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Navigation Menu */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+    /* Changed transition for background color */
+    padding: 10px 15px;
+    /* Added padding for better spacing */
+}
+
+nav ul li a:hover {
+    background-color: #5C4DA7;
+    /* Added background color on hover */
+    color: #fff;
+    /* Ensures text stays white on hover */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    margin-left: 20px;
+}
+
+.theme-toggle button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.5s;
+}
+
+body.dark-mode .theme-toggle button {
+    color: #E5E5F7;
+}
+
+/* Upload Section Styles */
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+
+h1 {
+    color: #333;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: #050505;
+    margin-bottom: 20px;
+}
+
+body.dark-mode h1 {
+    color: #fff;
+}
+
+.upload-content,
+.poster-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+    height: 100%;
+    /* Ensure full height */
+    text-align: center;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.container-center-horizontal>* {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+/* File Upload and Submit Button in the center */
+.upload-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+/* Container Rectangle */
+.container-rectangle {
+    background-color: #ffffff;
+    /* White background */
+    border: 2px solid #2d2867;
+    /* Dark border */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 20px;
+    margin: 20px auto;
+    /* Centering */
+    max-width: 1000px;
+    height: 40vh;
+    /* Set a max-width */
+    text-align: center;
+    /* Center align text */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+/* Inner Dashed Border */
+.dashed-border {
+    border: 2px dashed #333;
+    /* Dashed inner border */
+    padding: 10px;
+    /* Padding around file input */
+    border-radius: 6px;
+    /* Match or slightly smaller than outer radius */
+    max-width: 800px;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    /* Background for inner border area */
+}
+
+p {
+    font-size: 20px;
+    color: #050505;
+    margin-bottom: 20px;
+}
+
+body.dark-mode p {
+    color: #fff;
+}
+
+#poster-upload {
+    padding: 10px;
+    border: 2px solid #f3f1f1;
+    margin-bottom: 20px;
+}
+
+#submit-btn,
+.process-btn {
+    padding: 10px 20px;
+    background-color: #2e2867;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.5s;
+}
+
+#submit-btn:hover,
+.process-btn:hover {
+    background-color: #5C4DA7;
+}
+
+.poster-img {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* Progress Bar */
+#progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #f3f1f1;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    margin-top: 20px;
+    visibility: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #7572c6;
+    transition: width 0.5s;
+}
+
+/* Section for viewing the poster */
+.poster-view-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Container holding the poster */
+.poster-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Poster title styles */
+.poster-container h1 {
+    font-size: 32px !important;
+    color: #2e2867;
+    margin-bottom: 20px;
+}
+
+/* View Uploaded Poster text color in dark mode */
+body.dark-mode .poster-container h1 {
+    color: #fff;
+    /* Changes to white when in dark mode */
+}
+
+body.dark-mode .upload-content p {
+    color: #050505;
+    /* Changes to white when in dark mode */
+}
+
+
+.poster-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.process-btn {
+    padding: 10px 20px;
+    background-color: #2e2867;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.process-btn:hover {
+    background-color: #5C4DA7;
+}
+
+/* Progress Bar */
+#progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #f3f1f1;
+    border-radius: 5px;
+    height: 20px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    visibility: hidden;
+
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #7572c6;
+    transition: width 0.5s;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #2e2867;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    z-index: 1000;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer p {
+    color: white !important;
+    text-align: center !important;
+}
+
+
+body.dark-mode footer,
+body.dark-mode header {
+    background-color: #181232;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #050505;
+    color: #f6f5f5;
+}
+
+body.dark-mode .upload-content h1.highlighted {
+    color: #f6f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .upload-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
